@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>记路心晴</title>
+  
+  <subtitle>心晴路放</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-06-21T13:18:15.120Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>WilsonSong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>哈哈哈，终于把博客搭建起来啦</title>
+    <link href="http://yoursite.com/2018/06/21/first-blog/"/>
+    <id>http://yoursite.com/2018/06/21/first-blog/</id>
+    <published>2018-06-21T13:00:00.000Z</published>
+    <updated>2018-06-21T13:18:15.120Z</updated>
+    
+    <content type="html"><![CDATA[<p>  用来几个小时的时间，算是完成了简单的搭建，果然在学习的过程中才是最开心的。为什么要跑到这里搭建博客呢？嗯。。。。<br>  毕竟是要常年混迹在全球最大的同性交友社区了，把博客搭起来写写项目开发经历，记录下自己开踩过的坑，还是很重要的。<br>  希望路能越走越顺吧。啦啦啦……..</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  用来几个小时的时间，算是完成了简单的搭建，果然在学习的过程中才是最开心的。为什么要跑到这里搭建博客呢？嗯。。。。&lt;br&gt;  毕竟是要常年混迹在全球最大的同性交友社区了，把博客搭起来写写项目开发经历，记录下自己开踩过的坑，还是很重要的。&lt;br&gt;  希望路能越走越顺吧。啦啦
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
