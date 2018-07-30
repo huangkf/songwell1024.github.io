@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="世界，眼光" />
+  <meta name="keywords" content="机器学习，线性回归," />
 
 
 
@@ -88,13 +88,24 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="记路心晴">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
+<meta name="keywords" content="机器学习，线性回归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinearRegression">
+<meta property="og:url" content="http://yoursite.com/2018/07/30/LinearRegression/index.html">
 <meta property="og:site_name" content="记路心晴">
+<meta property="og:description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear1.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear2.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear3.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear4.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear5.png">
+<meta property="og:updated_time" content="2018-07-30T01:54:29.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记路心晴">
+<meta name="twitter:title" content="LinearRegression">
+<meta name="twitter:description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
+<meta name="twitter:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear1.png">
 
 
 
@@ -124,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/30/LinearRegression/"/>
 
 
 
 
 
-  <title>记路心晴</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>LinearRegression | 记路心晴</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -149,8 +160,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -285,9 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/30/LinearRegression/" itemprop="url">LinearRegression</a></h1>
+          <h1 class="post-title" itemprop="name headline">LinearRegression</h1>
         
 
         <div class="post-meta">
@@ -359,9 +367,7 @@
       
 
       
-        
-          
-            <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。</p>
+        <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。</p>
 <p>回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多元线性回归分析。<br>        其特点为：</p>
 <ul>
 <li><p>解决回归问题</p>
@@ -559,8 +565,6 @@ print(&quot;R Square = &quot; + str(rs))
 </code></pre><p><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear5.png" alt="data"></p>
 <p>这样我们就得到了所有的评价指标。</p>
 
-          
-        
       
     </div>
     
@@ -568,11 +572,19 @@ print(&quot;R Square = &quot; + str(rs))
     
 	<div>
 		  
+			
+		  
 	</div>
 	
     
 
 	  <div>
+	    
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
 	    
 	  </div>
     
@@ -581,314 +593,36 @@ print(&quot;R Square = &quot; + str(rs))
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/GradientDescent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WilsonSong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记路心晴">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/29/GradientDescent/" itemprop="url">机器学习之梯度下降法(GradientDescent)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T21:32:24+08:00">
-                2018-07-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/机器学习，线性回归/" rel="tag"><i class="fa fa-tag"></i> 机器学习，线性回归</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的还有一个梯度上升法，它的作用是最大化一个效用函数。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/29/GradientDescent/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/29/GradientDescent/" rel="next" title="机器学习之梯度下降法(GradientDescent)">
+                <i class="fa fa-chevron-left"></i> 机器学习之梯度下降法(GradientDescent)
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-		  
-	</div>
-	
-    
 
-	  <div>
-	    
-	  </div>
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/first-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WilsonSong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记路心晴">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/21/first-blog/" itemprop="url">哈哈哈，终于把博客搭建起来啦</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T21:00:00+08:00">
-                2018-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>  用来几个小时的时间，算是完成了简单的搭建，果然在学习的过程中才是最开心的。为什么要跑到这里搭建博客呢？嗯。。。。<br>  毕竟是要常年混迹在全球最大的同性交友社区了，把博客搭起来写写项目开发经历，记录下自己开踩过的坑，还是很重要的。<br>  希望路能越走越顺吧。啦啦啦……..</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	<div>
-		  
-	</div>
-	
-    
-
-	  <div>
-	    
-	  </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -898,10 +632,11 @@ print(&quot;R Square = &quot; + str(rs))
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -909,6 +644,9 @@ print(&quot;R Square = &quot; + str(rs))
 
 
           
+
+  
+  
 
         </div>
         
@@ -929,8 +667,17 @@ print(&quot;R Square = &quot; + str(rs))
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1027,6 +774,22 @@ print(&quot;R Square = &quot; + str(rs))
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单线性回归的实现"><span class="nav-number">1.2.</span> <span class="nav-text">简单线性回归的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归评价指标"><span class="nav-number">1.3.</span> <span class="nav-text">线性回归评价指标</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1163,6 +926,10 @@ print(&quot;R Square = &quot; + str(rs))
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
