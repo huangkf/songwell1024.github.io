@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="世界，眼光" />
+  <meta name="keywords" content="机器学习，梯度下降，python3，jupyter notebook," />
 
 
 
@@ -88,13 +88,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="记路心晴">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="梯度下降法概念梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的">
+<meta name="keywords" content="机器学习，梯度下降，python3，jupyter notebook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习之梯度下降法(GradientDescent)">
+<meta property="og:url" content="http://yoursite.com/2018/07/29/GradientDescent/index.html">
 <meta property="og:site_name" content="记路心晴">
+<meta property="og:description" content="梯度下降法概念梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent1.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent2.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent3.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent4.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent5.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent6.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent7.png">
+<meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent8.png">
+<meta property="og:updated_time" content="2018-07-30T01:03:36.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记路心晴">
+<meta name="twitter:title" content="机器学习之梯度下降法(GradientDescent)">
+<meta name="twitter:description" content="梯度下降法概念梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的">
+<meta name="twitter:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent1.png">
 
 
 
@@ -124,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/29/GradientDescent/"/>
 
 
 
 
 
-  <title>记路心晴</title>
+  <title>机器学习之梯度下降法(GradientDescent) | 记路心晴</title>
   
 
 
@@ -149,8 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,9 +266,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -285,9 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/29/GradientDescent/" itemprop="url">机器学习之梯度下降法(GradientDescent)</a></h1>
+          <h1 class="post-title" itemprop="name headline">机器学习之梯度下降法(GradientDescent)</h1>
         
 
         <div class="post-meta">
@@ -359,9 +370,7 @@
       
 
       
-        
-          
-            <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的还有一个梯度上升法，它的作用是最大化一个效用函数。<br>        用一个图来表示梯度下降法：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent1.png" alt=""></p>
+        <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的还有一个梯度上升法，它的作用是最大化一个效用函数。<br>        用一个图来表示梯度下降法：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent1.png" alt=""></p>
 <p>怎么理解呢？梯度其实是在在多维空间中的概念，在二维的平面上其实就是导数，梯度表示的就是方向，通过求某一个点的梯度，我们就可以知道J(损失函数)增大的方向，然后乘-η就可以找到J(损失函数)减小的方向，不断地求J的导数，直到其变为0，这样就找到J的最小值点。这里的η称为学习率，η的取值影响获得最优解的速度，η取值太小的时候学习速度收敛太慢，η太大有可能直接跳过最小值点然后导致不收敛。</p>
 <p><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent2.png" alt=""></p>
 <p>有可能在某一次取值的过程中找到的是局部最优解，而不是全局最优解。这个时候怎么解决呢？多次运行，随机化初始点，这样的话增加了找到全局最优解的概率。</p>
@@ -398,8 +407,6 @@
 <h3 id="随机梯度下降法实现"><a href="#随机梯度下降法实现" class="headerlink" title="随机梯度下降法实现"></a>随机梯度下降法实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">m = 100000</span><br><span class="line">x = np.random.normal(size = m)</span><br><span class="line">X = x.reshape(-1, 1)</span><br><span class="line">y = 4.0 * x + 3.0 + np.random.normal(0 ,3, size = m)</span><br><span class="line"></span><br><span class="line">def J(theta, X_b, y):</span><br><span class="line">try:</span><br><span class="line">return np.sum((y - X_b.dot(theta))**2) / len(y)</span><br><span class="line">except:</span><br><span class="line">return float(&apos;inf&apos;)</span><br><span class="line"></span><br><span class="line">def dJ_sgd(theta, X_b_i, y_i):</span><br><span class="line">return X_b_i.T.dot(X_b_i.dot(theta) - y_i) * 2.0 </span><br><span class="line"></span><br><span class="line">def sgd(X_b, y, initial_theta, n_iters):</span><br><span class="line">t0 = 5</span><br><span class="line">t1 = 50</span><br><span class="line"></span><br><span class="line">def learning_rate(t):</span><br><span class="line">return t0 / (t + t1)</span><br><span class="line"></span><br><span class="line">theta = initial_theta</span><br><span class="line">for cur_iter in range(n_iters):</span><br><span class="line">rand_i = np.random.randint(len(X_b))</span><br><span class="line">gradient = dJ_sgd(theta, X_b[rand_i], y[rand_i])</span><br><span class="line">theta = theta - learning_rate(cur_iter) * gradient</span><br><span class="line"></span><br><span class="line">return theta</span><br><span class="line">X_b = np.hstack([np.ones((len(X), 1)), X])</span><br><span class="line">initial_theta = np.zeros(X_b.shape[1])</span><br><span class="line">theta = sgd(X_b, y, initial_theta, n_iters = len(X_b)//3)</span><br><span class="line">print(&quot;theta = &quot; + str(theta))</span><br></pre></td></tr></table></figure>
 <p>输出的theta = [3.00887864 4.05589554]，与设置的数据相接近。</p>
 
-          
-        
       
     </div>
     
@@ -407,11 +414,19 @@
     
 	<div>
 		  
+			
+		  
 	</div>
 	
     
 
 	  <div>
+	    
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
 	    
 	  </div>
     
@@ -420,162 +435,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/first-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WilsonSong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记路心晴">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/21/first-blog/" itemprop="url">哈哈哈，终于把博客搭建起来啦</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T21:00:00+08:00">
-                2018-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/机器学习，梯度下降，python3，jupyter-notebook/" rel="tag"><i class="fa fa-tag"></i> 机器学习，梯度下降，python3，jupyter notebook</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  用来几个小时的时间，算是完成了简单的搭建，果然在学习的过程中才是最开心的。为什么要跑到这里搭建博客呢？嗯。。。。<br>  毕竟是要常年混迹在全球最大的同性交友社区了，把博客搭起来写写项目开发经历，记录下自己开踩过的坑，还是很重要的。<br>  希望路能越走越顺吧。啦啦啦……..</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	<div>
-		  
-	</div>
-	
-    
-
-	  <div>
-	    
-	  </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/21/first-blog/" rel="next" title="哈哈哈，终于把博客搭建起来啦">
+                <i class="fa fa-chevron-left"></i> 哈哈哈，终于把博客搭建起来啦
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -585,10 +474,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -596,6 +486,9 @@
 
 
           
+
+  
+  
 
         </div>
         
@@ -616,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -714,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度下降法"><span class="nav-number">1.</span> <span class="nav-text">梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟实现梯度下降法"><span class="nav-number">1.2.</span> <span class="nav-text">模拟实现梯度下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元线性回归中使用批量梯度下降"><span class="nav-number">1.3.</span> <span class="nav-text">多元线性回归中使用批量梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降法具体实现"><span class="nav-number">1.3.1.</span> <span class="nav-text">批量梯度下降法具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机梯度下降法"><span class="nav-number">1.4.</span> <span class="nav-text">随机梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟退火算法"><span class="nav-number">1.4.1.</span> <span class="nav-text">模拟退火算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降法实现"><span class="nav-number">1.4.2.</span> <span class="nav-text">随机梯度下降法实现</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -850,6 +768,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
