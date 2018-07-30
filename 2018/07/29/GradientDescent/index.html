@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -104,7 +104,7 @@
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent6.png">
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent7.png">
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent8.png">
-<meta property="og:updated_time" content="2018-07-30T01:03:36.326Z">
+<meta property="og:updated_time" content="2018-07-30T01:10:43.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习之梯度下降法(GradientDescent)">
 <meta name="twitter:description" content="梯度下降法概念梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的">
@@ -144,7 +144,7 @@
 
 
 
-  <title>机器学习之梯度下降法(GradientDescent) | 记路心晴</title>
+  <title>机器学习之梯度下降法(GradientDescent) | 记路心晴</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -163,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -370,7 +370,9 @@
       
 
       
-        <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的还有一个梯度上升法，它的作用是最大化一个效用函数。<br>        用一个图来表示梯度下降法：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent1.png" alt=""></p>
+        <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>梯度下降法是迭代法的一种,其实它不是一种具体的机器学习算法，是一种基于搜索的最优化方法，可以用于求解最小二乘问题(线性和非线性都可以)。在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。相应的还有一个梯度上升法，它的作用是最大化一个效用函数。</p>
+<a id="more"></a> 
+<p>​        用一个图来表示梯度下降法：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent1.png" alt=""></p>
 <p>怎么理解呢？梯度其实是在在多维空间中的概念，在二维的平面上其实就是导数，梯度表示的就是方向，通过求某一个点的梯度，我们就可以知道J(损失函数)增大的方向，然后乘-η就可以找到J(损失函数)减小的方向，不断地求J的导数，直到其变为0，这样就找到J的最小值点。这里的η称为学习率，η的取值影响获得最优解的速度，η取值太小的时候学习速度收敛太慢，η太大有可能直接跳过最小值点然后导致不收敛。</p>
 <p><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent2.png" alt=""></p>
 <p>有可能在某一次取值的过程中找到的是局部最优解，而不是全局最优解。这个时候怎么解决呢？多次运行，随机化初始点，这样的话增加了找到全局最优解的概率。</p>
@@ -380,7 +382,7 @@
 <p>然后我们上面讨论过，η取值太小的时候学习速度收敛太慢，η太大有可能直接跳过最小值点然后导致不收敛。下面测试一下。先取η=0.01<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent4.png" alt=""></p>
 <p>我们可以看出梯度下降的速度变慢了<br>        然后取η=1<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent5.png" alt=""></p>
 <p>当η&gt;1的时候编译器就自动报错，但是这里只是针对这里定义的这个函数，并不是意味着η=1就是极限值，针对不同的函数有不同的取值。</p>
-<h2 id="多元线性回归中使用批量梯度下降"><a href="#多元线性回归中使用批量梯度下降" class="headerlink" title="多元线性回归中使用批量梯度下降"></a>多元线性回归中使用批量梯度下降</h2><p>线性回归中使用梯度下降法，其目标是使得<br>$$<br>\sum_{i=1}^{m}(y^i-\hat{y}^i)^2<br>$$<br>尽可能小，而且线性回归算法的损失函数是具有唯一解的。<br>        其中<br>$$<br>\hat{y}^{i} = \theta _{0} + \theta <em>{1}X</em>{1}^{i}+…++ \theta <em>{n}X</em>{n}^{i}<br>$$<br>带入因此线性回归中梯度下降的目标就成为了<br>$$<br>\sum_{i=1}^{m}(y^i - \theta _{0} + \theta <em>{1}X</em>{1}^{i}+…++ \theta <em>{n}X</em>{n}^{i})<br>$$<br>使得其尽可能小。<br>那梯度怎么去求呢？如下：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent6.png" alt=""></p>
+<h2 id="多元线性回归中使用批量梯度下降"><a href="#多元线性回归中使用批量梯度下降" class="headerlink" title="多元线性回归中使用批量梯度下降"></a>多元线性回归中使用批量梯度下降</h2><p>线性回归中使用梯度下降法，其目标是使得<br>$$<br>\sum_{i=1}^{m}(y^i-\hat{y}^i)^2<br>$$<br>尽可能小，而且线性回归算法的损失函数是具有唯一解的。<br>        其中<br>$$<br>\hat{y}^{i} = \theta _{0} + \theta _{1}X_{1}^{i}+…++ \theta _{n}X_{n}^{i}<br>$$<br>带入因此线性回归中梯度下降的目标就成为了<br>$$<br>\sum_{i=1}^{m}(y^i - \theta _{0} + \theta _{1}X_{1}^{i}+…++ \theta _{n}X_{n}^{i})<br>$$<br>使得其尽可能小。<br>那梯度怎么去求呢？如下：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/Gradient%20Descent%2FGradientDescent6.png" alt=""></p>
 <h3 id="批量梯度下降法具体实现"><a href="#批量梯度下降法具体实现" class="headerlink" title="批量梯度下降法具体实现"></a>批量梯度下降法具体实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">np.random.seed(666)</span><br><span class="line">x = 2 * np.random.random(size = 100)</span><br><span class="line">y = x * 3.0 + 4.0 + np.random.normal(size = 100)</span><br><span class="line">X = x.reshape(-1, 1)</span><br><span class="line"></span><br><span class="line">#损失函数</span><br><span class="line">def J(theta, X_b, y):</span><br><span class="line">try:</span><br><span class="line">return np.sum((y - X_b.dot(theta))**2)/len(X_b)</span><br><span class="line">except:</span><br><span class="line">return float(&apos;inf&apos;)</span><br><span class="line"></span><br><span class="line">#损失函数的梯度</span><br><span class="line">def dJ(theta, X_b, y):</span><br><span class="line">res = np.empty(len(theta))</span><br><span class="line">res[0] = np.sum(X_b.dot(theta) - y)</span><br><span class="line">for i in range(1, len(theta)):</span><br><span class="line">res[i] = (X_b.dot(theta) - y).dot(X_b[:,i])</span><br><span class="line">return res *2 /len(X_b)</span><br><span class="line"></span><br><span class="line">#梯度下降法</span><br><span class="line">def gradient_descent(X_b, y, initial_thata, eta, n_iters = 1e4, epsilon = 1e-8):</span><br><span class="line">theta = initial_theta</span><br><span class="line">i_iter = 0</span><br><span class="line"></span><br><span class="line">while i_iter &lt; n_iters:# n_iters是最大循环次数</span><br><span class="line">gradient = dJ(theta, X_b, y)</span><br><span class="line">last_theta = theta</span><br><span class="line">theta = theta - eta * gradient</span><br><span class="line"></span><br><span class="line">if(abs(J(theta, X_b, y) - J(last_theta, X_b, y)) &lt; epsilon):</span><br><span class="line">break</span><br><span class="line"></span><br><span class="line">i_iter += 1</span><br><span class="line"></span><br><span class="line">return theta</span><br><span class="line"></span><br><span class="line">X_b = np.hstack([np.ones((len(x), 1)), x.reshape(-1, 1)])</span><br><span class="line">initial_theta = np.zeros(X_b.shape[1])</span><br><span class="line">eta = 0.01</span><br><span class="line"></span><br><span class="line">theta = gradient_descent(X_b, y, initial_theta, eta)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(x, y)</span><br><span class="line">Y = X_b.dot(theta)</span><br><span class="line">plt.plot(x, Y, color=<span class="string">"red"</span>)</span><br><span class="line">plt.show()</span><br><span class="line">print(<span class="string">"theta = "</span> + str(theta))</span><br></pre></td></tr></table></figure>
 <p>得到的结果</p>
@@ -836,6 +838,6 @@
 
   
   <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
+<script type="text/javascript" src="/js/src/love.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
