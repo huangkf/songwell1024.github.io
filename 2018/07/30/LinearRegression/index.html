@@ -91,7 +91,7 @@
 <meta name="description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
 <meta name="keywords" content="机器学习，线性回归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LinearRegression">
+<meta property="og:title" content="机器学习之线性回归（Linear Regression）">
 <meta property="og:url" content="http://yoursite.com/2018/07/30/LinearRegression/index.html">
 <meta property="og:site_name" content="记路心晴">
 <meta property="og:description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
@@ -101,9 +101,9 @@
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear3.png">
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear4.png">
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear5.png">
-<meta property="og:updated_time" content="2018-07-30T01:54:29.696Z">
+<meta property="og:updated_time" content="2018-07-31T13:18:48.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LinearRegression">
+<meta name="twitter:title" content="机器学习之线性回归（Linear Regression）">
 <meta name="twitter:description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
 <meta name="twitter:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear1.png">
 
@@ -141,7 +141,7 @@
 
 
 
-  <title>LinearRegression | 记路心晴</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>机器学习之线性回归（Linear Regression） | 记路心晴</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -295,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LinearRegression</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习之线性回归（Linear Regression）</h1>
         
 
         <div class="post-meta">
@@ -379,27 +379,19 @@
 <li><p>结果具有很好的可解释性</p>
 </li>
 <li><p>蕴含机器学习中的很多重要思想</p>
+<a id="more"></a> 
+<h2 id="简单线性回归的实现"><a href="#简单线性回归的实现" class="headerlink" title="简单线性回归的实现"></a>简单线性回归的实现</h2><p>下面我们来举例何为一元线性回归分析:</p>
+<pre><code>首先假设有这样一组数据
+</code></pre><p><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear1.png" alt="dataset"></p>
+<pre><code>从数据中我们可以看出，可以找到一条直线实现数据的拟合，这条直线设为
+                            y=ax+b
+那怎么计算a和b的参数，公式如下:
+</code></pre><p><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear2.png" alt="ab"></p>
+<p>jupyter notebook中具体的代码实现：</p>
 </li>
 </ul>
-<h2 id="简单线性回归的实现"><a href="#简单线性回归的实现" class="headerlink" title="简单线性回归的实现"></a>简单线性回归的实现</h2><p>  下面我们来举例何为一元线性回归分析:<br>      首先假设有这样一组数据<br>  <img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear1.png" alt="dataset"><br>      从数据中我们可以看出，可以找到一条直线实现数据的拟合，这条直线设为<br>                                  y=ax+b<br>      那怎么计算a和b的参数，公式如下:<br>  <img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear2.png" alt="ab"></p>
-<p>  jupyter notebook中具体的代码实现：</p>
-<pre><code>x_mean = np.mean(x)
-y_mean = np.mean(y)
-# 分子
-num = 0.0
-# 分母
-d = 0.0
-for x_i, y_i in zip(x, y):
-num += (x_i - x_mean) * (y_i - y_mean)
-d += (x_i - x_mean) ** 2
-a = num/d
-b = y_mean - a*x_mean
-y_hat = a*x + b
-plt.scatter(x,y)
-plt.plot(x,y_hat,color=&quot;r&quot;)
-plt.axis([0,6,0,6])
-plt.show()
-</code></pre><p>得到了拟合数据的直线：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear3.png" alt="拟合直线"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">x_mean = np.mean(x)</span><br><span class="line">y_mean = np.mean(y)</span><br><span class="line"><span class="comment">#分子</span></span><br><span class="line">num = <span class="number">0.0</span></span><br><span class="line"><span class="comment">#分母</span></span><br><span class="line">d = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> x_i, y_i <span class="keyword">in</span> zip(x, y):</span><br><span class="line">num += (x_i - x_mean) * (y_i - y_mean)</span><br><span class="line">d += (x_i - x_mean) ** <span class="number">2</span></span><br><span class="line">a = num/d</span><br><span class="line">b = y_mean - a*x_mean</span><br><span class="line">y_hat = a*x + b</span><br><span class="line">plt.scatter(x,y)</span><br><span class="line">plt.plot(x,y_hat,color=<span class="string">"r"</span>)</span><br><span class="line">plt.axis([<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">6</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>得到了拟合数据的直线：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear3.png" alt="拟合直线"></p>
 <p>这里还可以在底层自己实现线性回归的算法，然后在jupyter notebook中调用，相应的pycharm的代码为：</p>
 <pre><code>import numpy as np
 from sklearn.metrics import r2_score
@@ -523,44 +515,16 @@ return r2_score(y_test, y_predict)
 
 def __repr__(self):
 return &quot;LinearRegression()&quot;
-</code></pre><p>​<br>这里其实就是一个简单的一元数据的一个简答线性回归算法。</p>
+</code></pre><p>​<br>    这里其实就是一个简单的一元数据的一个简答线性回归算法。</p>
 <h2 id="线性回归评价指标"><a href="#线性回归评价指标" class="headerlink" title="线性回归评价指标"></a>线性回归评价指标</h2><p>那怎么去评价线性回归算法的指标的好坏呢？<br>    常用得三个指标：均方误差MSE、均方根误差RMSE、平均绝对误差MAE，这三类算法具体公式这些就不再赘述了，这三类指标都存在一个局限性：作用域的使用范围，对不同事物的预测缺乏统一标准，这样就引出了新的一个预测指标R Squared，其实就是R^2,关于R^2的解释如下：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear4.png" alt="R^2"></p>
 <p>从上面的图中我们到关于R^2的公式，公式中上面分子就是我们训练出的模型预测的所有误差。 下面分母就是    不管什么我们猜的结果就是y的平均数。（其实也就是我们瞎猜的误差）<br>    那具体实现下这些评价指标，首先换一个数据集，上面是我们自己构造的的太简单了，<br>    导入sklearn中的datasets</p>
-<pre><code>import numpy as np
-import matplotlib.pyplot as plt
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error
-
-boston = datasets.load_boston()
-x = boston.data[:,5]
-y = boston.target
-x = x[y&lt;50.0]
-y = y[y&lt;50.0]
-plt.scatter(x, y)
-plt.show()
-# 划分训练集和测试集
-
-x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2)
-
-# 简单线性规划
-x_mean = np.mean(x_train)
-y_mean = np.mean(y_train)
-# 分子
-num = 0.0
-# 分母
-d = 0.0
-for x_i, y_i in zip(x_train, y_train):
-num += (x_i - x_mean) * (y_i - y_mean)
-d += (x_i - x_mean) ** 2
-a = num/d
-b = y_mean - a*x_mean
-y_hat = a*x_train + b # 回归函数
-plt.scatter(x_train, y_train)
-plt.plot(x_train, y_hat, color=&quot;r&quot;)
-plt.show()
-</code></pre><p>​<br>    y_predict = a*x_test + b<br>    mse = mean_squared_error(y_test, y_predict)<br>    mae = mean_absolute_error(y_test, y_predict)<br>    print(“均方误差为：” + str(mse))<br>    print(“平均绝对误差为：” + str(mae))</p>
-<pre><code>rs = 1 - mse/np.var(y_test)
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error, mean_absolute_error</span><br><span class="line"></span><br><span class="line">boston = datasets.load_boston()</span><br><span class="line">x = boston.data[:,<span class="number">5</span>]</span><br><span class="line">y = boston.target</span><br><span class="line">x = x[y&lt;<span class="number">50.0</span>]</span><br><span class="line">y = y[y&lt;<span class="number">50.0</span>]</span><br><span class="line">plt.scatter(x, y)</span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment"># 划分训练集和测试集</span></span><br><span class="line"></span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=<span class="number">0.2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单线性规划</span></span><br><span class="line">x_mean = np.mean(x_train)</span><br><span class="line">y_mean = np.mean(y_train)</span><br><span class="line"><span class="comment"># 分子</span></span><br><span class="line">num = <span class="number">0.0</span></span><br><span class="line"><span class="comment"># 分母</span></span><br><span class="line">d = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> x_i, y_i <span class="keyword">in</span> zip(x_train, y_train):</span><br><span class="line">num += (x_i - x_mean) * (y_i - y_mean)</span><br><span class="line">d += (x_i - x_mean) ** <span class="number">2</span></span><br><span class="line">a = num/d</span><br><span class="line">b = y_mean - a*x_mean</span><br><span class="line">y_hat = a*x_train + b <span class="comment"># 回归函数</span></span><br><span class="line">plt.scatter(x_train, y_train)</span><br><span class="line">plt.plot(x_train, y_hat, color=<span class="string">"r"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre><code>y_predict = a*x_test + b
+mse = mean_squared_error(y_test, y_predict)
+mae = mean_absolute_error(y_test, y_predict)
+print(&quot;均方误差为：&quot; + str(mse))
+print(&quot;平均绝对误差为：&quot; + str(mae))
+rs = 1 - mse/np.var(y_test)
 print(&quot;R Square = &quot; + str(rs))
 </code></pre><p><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear5.png" alt="data"></p>
 <p>这样我们就得到了所有的评价指标。</p>
@@ -617,6 +581,10 @@ print(&quot;R Square = &quot; + str(rs))
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/30/LogisticRegression/" rel="prev" title="机器学习之逻辑回归（Logistic Regression）与决策边界">
+                机器学习之逻辑回归（Logistic Regression）与决策边界 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -692,7 +660,7 @@ print(&quot;R Square = &quot; + str(rs))
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -714,7 +682,7 @@ print(&quot;R Square = &quot; + str(rs))
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -814,7 +782,7 @@ print(&quot;R Square = &quot; + str(rs))
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.9k字</span>
+  <span class="post-count">博客全站共7.9k字</span>
 </div>
         
 
