@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -96,13 +96,13 @@
 <meta property="og:site_name" content="记路心晴">
 <meta property="og:description" content="页面缓存+URL缓存+对象缓存页面缓存其实系统访问某个页面的时候，并不是直接使用系统渲染，而是先从缓存中获取找到数据之后就然后返回给客户端，要是没有找到就手动渲染这个模板，渲染完成之后再把数据返回给客户端，同时把数据缓存到redis中。 其实流程很简单：（1）取缓存  （2）手动渲染模板  （3）结果输出 关于手动渲染，官方的介绍是这么说的;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475002.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475274543.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/1533475002.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/1533475274543.png">
 <meta property="og:updated_time" content="2018-08-06T13:36:27.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot2之秒杀页面优化及解决超卖问题">
 <meta name="twitter:description" content="页面缓存+URL缓存+对象缓存页面缓存其实系统访问某个页面的时候，并不是直接使用系统渲染，而是先从缓存中获取找到数据之后就然后返回给客户端，要是没有找到就手动渲染这个模板，渲染完成之后再把数据返回给客户端，同时把数据缓存到redis中。 其实流程很简单：（1）取缓存  （2）手动渲染模板  （3）结果输出 关于手动渲染，官方的介绍是这么说的;">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475002.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/1533475002.png">
 
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <title>SpringBoot2之秒杀页面优化及解决超卖问题 | 记路心晴</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>SpringBoot2之秒杀页面优化及解决超卖问题 | 记路心晴</title>
   
 
 
@@ -157,7 +157,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -382,9 +382,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">updatePassword</span><span class="params">(String token,<span class="keyword">long</span> id, String formPasswordNew)</span></span>&#123;</span><br><span class="line">        SecKillUser user = getUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (user == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span>  <span class="keyword">new</span> GlobalException(CodeMsg.MOBILE_NOT_EXITS);</span><br><span class="line">        &#125;</span><br><span class="line">        SecKillUser user2Update = <span class="keyword">new</span> SecKillUser();</span><br><span class="line">        user2Update.setId(id);</span><br><span class="line">        user2Update.setPassword(MD5Util.fromPass2DBPass(formPasswordNew,user.getSalt()));</span><br><span class="line">        secKillUserDao.update(user2Update);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//修改缓存</span></span><br><span class="line">        redisService.delete(SecKillUserKey.getById,<span class="string">""</span>+id);</span><br><span class="line">        <span class="comment">//更新缓存中的token</span></span><br><span class="line">        user.setPassword(user2Update.getPassword());</span><br><span class="line">        redisService.set(SecKillUserKey.token,token, user);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>做了部分优化，测试一下，测试的Linux服务器为1g+4核。</p>
 <p>没有优化之前</p>
-<p><img src="SecKillPageOptimise\1533475002.png" alt="1533475002(1)"></p>
+<p><img src="/2018/08/05/SecKillPageOptimise/1533475002.png" alt="1533475002(1)"></p>
 <p>优化之后</p>
-<p><img src="SecKillPageOptimise\1533475274543.png" alt="1533475274543"></p>
+<p><img src="/2018/08/05/SecKillPageOptimise/1533475274543.png" alt="1533475274543"></p>
 <p>可以看到并发已经上去了，QPS从1267上升到2218了。</p>
 <h2 id="页面静态优化-前后端分离"><a href="#页面静态优化-前后端分离" class="headerlink" title="页面静态优化 前后端分离"></a>页面静态优化 前后端分离</h2><p>先想一下我们在平常的开发中前后端交互的流程：其实服务端为动态页面作用很单一就是提供了网站需要展示的数据而已，服务端是不会创造一个新页面的。服务端提供的数据的类型也是很统一，要不就是服务端语言提供的基本数据类型例如：字符、数字、日期等等，要不就是复杂点的数据类型例如数组、列表、键值对等等，不过归属服务端的动态页面还需要服务端语言帮助做一件事情，那就是把服务端提供的数据整合到页面里，最终产生一个浏览器可以解析的html网页，这个操作无非就是使用服务端语言可以构造文件的能力构建一个符合要求的html文件而已。不过一个页面里需要动态变化的往往只是其中一部分，所以做服务端的动态页面开发时候我们可以直接写html代码，这些html代码就等于在构造页面展示的模板而已，而模板的空白处则是使用服务端数据填充，因此在java的web开发里视图层技术延生出了Thymeleaf，freemark这样的技术，我们将其称之为模板语言的由来。</p>
 <p>由此可见，服务端MVC框架里抢夺的web前端的工作就是抢占了构建html模板的工作，那么我们在设计web前端的MVC框架时候对于和服务端对接这块只需要让服务端保持提供数据的特性即可。从这些论述里我们发现了，其实前端MVC框架要解决的核心问题应该有这两个,它们分别是：</p>
@@ -884,6 +884,6 @@
 
   
   <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script type="text/javascript" src="/js/src/love.js"></script>
 </body>
 </html>
