@@ -96,13 +96,13 @@
 <meta property="og:site_name" content="记路心晴">
 <meta property="og:description" content="页面缓存+URL缓存+对象缓存页面缓存其实系统访问某个页面的时候，并不是直接使用系统渲染，而是先从缓存中获取找到数据之后就然后返回给客户端，要是没有找到就手动渲染这个模板，渲染完成之后再把数据返回给客户端，同时把数据缓存到redis中。 其实流程很简单：（1）取缓存  （2）手动渲染模板  （3）结果输出 关于手动渲染，官方的介绍是这么说的;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475002(1">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475002.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475274543.png">
-<meta property="og:updated_time" content="2018-08-06T12:57:18.000Z">
+<meta property="og:updated_time" content="2018-08-06T13:36:27.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot2之秒杀页面优化及解决超卖问题">
 <meta name="twitter:description" content="页面缓存+URL缓存+对象缓存页面缓存其实系统访问某个页面的时候，并不是直接使用系统渲染，而是先从缓存中获取找到数据之后就然后返回给客户端，要是没有找到就手动渲染这个模板，渲染完成之后再把数据返回给客户端，同时把数据缓存到redis中。 其实流程很简单：（1）取缓存  （2）手动渲染模板  （3）结果输出 关于手动渲染，官方的介绍是这么说的;">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475002(1">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/SecKillPageOptimise/1533475002.png">
 
 
 
@@ -382,9 +382,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">updatePassword</span><span class="params">(String token,<span class="keyword">long</span> id, String formPasswordNew)</span></span>&#123;</span><br><span class="line">        SecKillUser user = getUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (user == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span>  <span class="keyword">new</span> GlobalException(CodeMsg.MOBILE_NOT_EXITS);</span><br><span class="line">        &#125;</span><br><span class="line">        SecKillUser user2Update = <span class="keyword">new</span> SecKillUser();</span><br><span class="line">        user2Update.setId(id);</span><br><span class="line">        user2Update.setPassword(MD5Util.fromPass2DBPass(formPasswordNew,user.getSalt()));</span><br><span class="line">        secKillUserDao.update(user2Update);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//修改缓存</span></span><br><span class="line">        redisService.delete(SecKillUserKey.getById,<span class="string">""</span>+id);</span><br><span class="line">        <span class="comment">//更新缓存中的token</span></span><br><span class="line">        user.setPassword(user2Update.getPassword());</span><br><span class="line">        redisService.set(SecKillUserKey.token,token, user);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>做了部分优化，测试一下，测试的Linux服务器为1g+4核。</p>
 <p>没有优化之前</p>
-<p><img src=".\SecKillPageOptimise\1533475002(1" alt="1533475002(1)">.png)</p>
+<p><img src="SecKillPageOptimise\1533475002.png" alt="1533475002(1)"></p>
 <p>优化之后</p>
-<p><img src=".\SecKillPageOptimise\1533475274543.png" alt="1533475274543"></p>
+<p><img src="SecKillPageOptimise\1533475274543.png" alt="1533475274543"></p>
 <p>可以看到并发已经上去了，QPS从1267上升到2218了。</p>
 <h2 id="页面静态优化-前后端分离"><a href="#页面静态优化-前后端分离" class="headerlink" title="页面静态优化 前后端分离"></a>页面静态优化 前后端分离</h2><p>先想一下我们在平常的开发中前后端交互的流程：其实服务端为动态页面作用很单一就是提供了网站需要展示的数据而已，服务端是不会创造一个新页面的。服务端提供的数据的类型也是很统一，要不就是服务端语言提供的基本数据类型例如：字符、数字、日期等等，要不就是复杂点的数据类型例如数组、列表、键值对等等，不过归属服务端的动态页面还需要服务端语言帮助做一件事情，那就是把服务端提供的数据整合到页面里，最终产生一个浏览器可以解析的html网页，这个操作无非就是使用服务端语言可以构造文件的能力构建一个符合要求的html文件而已。不过一个页面里需要动态变化的往往只是其中一部分，所以做服务端的动态页面开发时候我们可以直接写html代码，这些html代码就等于在构造页面展示的模板而已，而模板的空白处则是使用服务端数据填充，因此在java的web开发里视图层技术延生出了Thymeleaf，freemark这样的技术，我们将其称之为模板语言的由来。</p>
 <p>由此可见，服务端MVC框架里抢夺的web前端的工作就是抢占了构建html模板的工作，那么我们在设计web前端的MVC框架时候对于和服务端对接这块只需要让服务端保持提供数据的特性即可。从这些论述里我们发现了，其实前端MVC框架要解决的核心问题应该有这两个,它们分别是：</p>
@@ -411,22 +411,22 @@
 <p>关于这个还找到了一篇博客啊，仅供参考。</p>
 <p><a href="https://blog.csdn.net/zhangjs712/article/details/51166748">https://blog.csdn.net/zhangjs712/article/details/51166748</a></p>
 <h1 id="超卖问题"><a href="#超卖问题" class="headerlink" title="超卖问题"></a>超卖问题</h1><h4 id="超发的原因"><a href="#超发的原因" class="headerlink" title="超发的原因"></a>超发的原因</h4><p>假设某个抢购场景中，我们一共只有100个商品，在最后一刻，我们已经消耗了99个商品，仅剩最后一个。这个时候，系统发来多个并发请求，这批请求读取到的商品余量都是99个，然后都通过了这一个余量判断，最终导致超发。（同文章前面说的场景）</p>
-<p><img src=".\SecKillPageOptimise\22492T335-9.jpg" alt="img"></p>
+<p><img src="SecKillPageOptimise\22492T335.png" alt="img"></p>
 <p>在上面的这个图中，就导致了并发用户B也“抢购成功”，多让一个人获得了商品。这种场景，在高并发的情况下非常容易出现。</p>
 <p><strong>1.数据库唯一索引</strong></p>
 <p>就是分表，秒杀的订单和正常的订单是两张表，在数据库中建立用户id和商品id的唯一索引，防止用户插入重复的记录。</p>
 <p><strong>2. 悲观锁思路</strong></p>
 <p>解决线程安全的思路很多，可以从“悲观锁”的方向开始讨论。</p>
 <p>悲观锁，也就是在修改数据的时候，采用锁定状态，排斥外部请求的修改。遇到加锁的状态，就必须等待。</p>
-<p><img src=".\SecKillPageOptimise\22492R5A-10.jpg" alt="img"></p>
+<p><img src="SecKillPageOptimise\22492R5A.png" alt="img"></p>
 <p>虽然上述的方案的确解决了线程安全的问题，但是，别忘记，我们的场景是“高并发”。也就是说，会很多这样的修改请求，每个请求都需要等待“锁”，某些线程可能永远都没有机会抢到这个“锁”，这种请求就会死在那里。同时，这种请求会很多，瞬间增大系统的平均响应时间，结果是可用连接数被耗尽，系统陷入异常。</p>
 <p><strong>3. FIFO队列思路</strong></p>
 <p>那好，那么我们稍微修改一下上面的场景，我们直接将请求放入队列中的，采用FIFO（First Input First Output，先进先出），这样的话，我们就不会导致某些请求永远获取不到锁。看到这里，是不是有点强行将多线程变成单线程的感觉哈。</p>
-<p><img src=".\SecKillPageOptimise\22492WV1-11.jpg" alt="img"></p>
+<p><img src="SecKillPageOptimise\22492WV1.png" alt="img"></p>
 <p>然后，我们现在解决了锁的问题，全部请求采用“先进先出”的队列方式来处理。那么新的问题来了，高并发的场景下，因为请求很多，很可能一瞬间将队列内存“撑爆”，然后系统又陷入到了异常状态。或者设计一个极大的内存队列，也是一种方案，但是，系统处理完一个队列内请求的速度根本无法和疯狂涌入队列中的数目相比。也就是说，队列内的请求会越积累越多，最终Web系统平均响应时候还是会大幅下降，系统还是陷入异常。</p>
 <p><strong>4. 乐观锁思路</strong></p>
 <p> 这个时候，我们就可以讨论一下“乐观锁”的思路了。乐观锁，是相对于“悲观锁”采用更为宽松的加锁机制，大都是采用带版本号（Version）更新。实现就是，这个数据所有请求都有资格去修改，但会获得一个该数据的版本号，只有版本号符合的才能更新成功，其他的返回抢购失败。这样的话，我们就不需要考虑队列的问题，不过，它会增大CPU的计算开销。但是，综合来说，这是一个比较好的解决方案。</p>
-<p><img src=".\SecKillPageOptimise\22492Q463-12.jpg" alt="img"></p>
+<p><img src="SecKillPageOptimise\22492Q463.png" alt="img"></p>
 <p>有很多软件和服务都“乐观锁”功能的支持，例如Redis中的watch就是其中之一。通过这个实现，我们保证了数据的安全。</p>
 <p>就是采用计数器的方式，用一个集合，存放每个商品以及其对应的数量，如果只是单纯的decr函数或者是incr函数，不能解决秒杀这种问题。因为有可能在并发的情况下，两个请求取到的数都是0，然后都加1，结果为1，实际上应该是2。那么这个时候建议利用乐观锁，实现自己的decr函数。</p>
 <p>乐观锁的机制如同版本控制，如果修改的时候，要修改的value在redis中的值已经跟取出来时不一样，则修改失败。</p>
