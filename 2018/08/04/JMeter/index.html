@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/04/JMeter/1533380223(1">
 <meta property="og:image" content="http://yoursite.com/2018/08/04/JMeter/1533382163(1">
 <meta property="og:image" content="http://yoursite.com/2018/08/04/JMeter/1533382655(1">
-<meta property="og:updated_time" content="2018-08-06T13:55:16.412Z">
+<meta property="og:updated_time" content="2018-08-06T14:06:04.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot学习之Windows和Linux下的JMeter压测和redis压测">
 <meta name="twitter:description" content="SpringBoot学习之JMeter压测JMeter入门jmeter是apache公司基于java开发的一款开源压力测试工具，体积小，功能全，使用方便，是一个比较轻量级的测试工具，使用起来非常简单。因为jmeter是java开发的，所以运行的时候必须先要安装jdk才可以。jmeter是免安装的，拿到安装包之后直接解压就可以使用，同时它在linux/windows/macos上都可以使用。">
@@ -375,7 +375,7 @@
 
       
         <h1 id="SpringBoot学习之JMeter压测"><a href="#SpringBoot学习之JMeter压测" class="headerlink" title="SpringBoot学习之JMeter压测"></a>SpringBoot学习之JMeter压测</h1><h3 id="JMeter入门"><a href="#JMeter入门" class="headerlink" title="JMeter入门"></a>JMeter入门</h3><p>jmeter是apache公司基于java开发的一款开源压力测试工具，体积小，功能全，使用方便，是一个比较轻量级的测试工具，使用起来非常简单。因为jmeter是java开发的，所以运行的时候必须先要安装jdk才可以。jmeter是免安装的，拿到安装包之后直接解压就可以使用，同时它在linux/windows/macos上都可以使用。 </p>
-<a id="more"></a>   <br><br>jmeter可以做接口测试和压力测试。其中接口测试的简单操作包括做http脚本（发get/post请求、加cookie、加header、加权限认证、上传文件）、做webservice脚本、参数化、断言、关联（正则表达式提取器和处理json-json path extractor）和jmeter操作数据库等等。<br><br>JMeter的官方网站：<a href="http://jmeter.apache.org/" target="_blank" rel="noopener">http://jmeter.apache.org/</a><br><br>JMeter的参考手册：<a href="http://jmeter.apache.org/usermanual/get-started.html" target="_blank" rel="noopener">http://jmeter.apache.org/usermanual/get-started.html</a><br><br>## Windows下的压测<br><br>### Jmeter-http接口脚本<br><br>一般分五个步骤:（1）添加线程组 （2）添加http请求 （3）在http请求中写入接入url、路径、请求方式和参数 （4）添加聚合报告 （5）调用接口、查看返回值<br><br>（1）添加线程组：<br><br><img src="/2018/08/04/JMeter/1533370431(1" alt="1533370431(1)">.png)<br><br><br><br>（2）添加http请求：<br><br><img src="/2018/08/04/JMeter/1533370936(1" alt="1533370936(1)">.png)<br><br>（3）在http请求中写入接入url、路径、请求方式和参数 ：<br><br><img src="/2018/08/04/JMeter/1533371145(1" alt="1533371145(1)">.png)<br><br>（4）添加聚合报告和图形结果或查看结果树：<br><br><img src="/2018/08/04/JMeter/1533371428(1" alt="1533371428(1)">.png)<br><br>聚合报告只是总体的进行解析压测结果。<br><br>（5）调用接口、查看返回值：<br><br>同时启动1000个线程，<br><br><img src="/2018/08/04/JMeter/1533373120(1" alt="1533373120(1)">.png)<br><br>## JMeter 自定义变量<br><br>新建http请求，添加token<br><br><img src="/2018/08/04/JMeter/1533377588(1" alt="1533377588(1)">.png)<br><br>压测之后能够看到自己添加的token，<br><br><img src="/2018/08/04/JMeter/1533378489(1" alt="1533378489(1)">.png)<br><br>还能看到返回的数据<br><br><img src="/2018/08/04/JMeter/1533378668(1" alt="1533378668(1)">.png)<br><br>## JMeter读取自定义文件模拟多用户<br><br>需要在线程组里面添加配置元件-CSV Data Set Config，添加文件和自定义文件中对应的变量名<br><br>其中遇到文件结束符再次循环（Recycle on EOF）:设置True后，允许循环取值<br><br><img src="/2018/08/04/JMeter/1533380011(1" alt="1533380011(1)">.png)<br><br><img src="/2018/08/04/JMeter/1533380223(1" alt="1533380223(1)">.png)<br><br>引入${userToken}，与你定义的变量名相同。<br><br><br><br>## Linux下使用JMeter压测<br><br>首先在Windows下创建一个压测，然后存为.jmx文件。上传至Linux下<br><br>执行<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-jmeter-4.0/bin/jmeter.sh -n -t goods_list.jmx -l  result.jtl</span><br></pre></td></tr></table></figure>
+<a id="more"></a>   <br><br>jmeter可以做接口测试和压力测试。其中接口测试的简单操作包括做http脚本（发get/post请求、加cookie、加header、加权限认证、上传文件）、做webservice脚本、参数化、断言、关联（正则表达式提取器和处理json-json path extractor）和jmeter操作数据库等等。<br><br>JMeter的官方网站：<a href="http://jmeter.apache.org/" target="_blank" rel="noopener">http://jmeter.apache.org/</a><br><br>JMeter的参考手册：<a href="http://jmeter.apache.org/usermanual/get-started.html" target="_blank" rel="noopener">http://jmeter.apache.org/usermanual/get-started.html</a><br><br><br><br>## Windows下的压测<br><br>### Jmeter-http接口脚本<br><br>一般分五个步骤:（1）添加线程组 （2）添加http请求 （3）在http请求中写入接入url、路径、请求方式和参数 （4）添加聚合报告 （5）调用接口、查看返回值<br><br>（1）添加线程组：<br><br><img src="/2018/08/04/JMeter/1533370431(1" alt="1533370431(1)">.png)<br><br><br><br>（2）添加http请求：<br><br><img src="/2018/08/04/JMeter/1533370936(1" alt="1533370936(1)">.png)<br><br>（3）在http请求中写入接入url、路径、请求方式和参数 ：<br><br><img src="/2018/08/04/JMeter/1533371145(1" alt="1533371145(1)">.png)<br><br>（4）添加聚合报告和图形结果或查看结果树：<br><br><img src="/2018/08/04/JMeter/1533371428(1" alt="1533371428(1)">.png)<br><br>聚合报告只是总体的进行解析压测结果。<br><br>（5）调用接口、查看返回值：<br><br>同时启动1000个线程，<br><br><img src="/2018/08/04/JMeter/1533373120(1" alt="1533373120(1)">.png)<br><br><br><br>## JMeter 自定义变量<br><br>新建http请求，添加token<br><br><img src="/2018/08/04/JMeter/1533377588(1" alt="1533377588(1)">.png)<br><br>压测之后能够看到自己添加的token，<br><br><img src="/2018/08/04/JMeter/1533378489(1" alt="1533378489(1)">.png)<br><br>还能看到返回的数据<br><br><img src="/2018/08/04/JMeter/1533378668(1" alt="1533378668(1)">.png)<br><br><br><br>## JMeter读取自定义文件模拟多用户<br><br>需要在线程组里面添加配置元件-CSV Data Set Config，添加文件和自定义文件中对应的变量名<br><br>其中遇到文件结束符再次循环（Recycle on EOF）:设置True后，允许循环取值<br><br><img src="/2018/08/04/JMeter/1533380011(1" alt="1533380011(1)">.png)<br><br><img src="/2018/08/04/JMeter/1533380223(1" alt="1533380223(1)">.png)<br><br>引入${userToken}，与你定义的变量名相同。<br><br><br><br>## Linux下使用JMeter压测<br><br>首先在Windows下创建一个压测，然后存为.jmx文件。上传至Linux下<br><br>执行<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-jmeter-4.0/bin/jmeter.sh -n -t goods_list.jmx -l  result.jtl</span><br></pre></td></tr></table></figure>
 <p>这样就可以得到 result.jtl数据了，可以查看结果</p>
 <p>当然也可以直接在Linux下直接测试，我这是为了方便就这么做了。</p>
 <h1 id="redis-压测"><a href="#redis-压测" class="headerlink" title="redis 压测"></a>redis 压测</h1><p>看一下redis服务是否在运行</p>
@@ -452,8 +452,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/05/SpringWebContext/" rel="prev" title="SpringBoot2踩坑之SpringWebContext方法过时">
-                SpringBoot2踩坑之SpringWebContext方法过时 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/05/SecKillPageOptimise/" rel="prev" title="SpringBoot2之秒杀页面优化及解决超卖问题">
+                SpringBoot2之秒杀页面优化及解决超卖问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -530,7 +530,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -552,7 +552,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -652,7 +652,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.7k字</span>
+  <span class="post-count">博客全站共24.2k字</span>
 </div>
         
 
