@@ -88,26 +88,26 @@
 
 
 
-<meta name="description" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解安装RabbitMQ安装环境centos7 + RabbitMQ 3.7.7   + OTP 21.0 Source File  1.安装erlang: （1）.下载: http://www.erlang.org/downloads （2）.安装依赖yum install ncurses-devel        （">
+<meta name="description" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解安装RabbitMQ安装环境centos7 + RabbitMQ 3.7.7   + OTP 21.0 Source File">
 <meta name="keywords" content="SpringBoot,RabbitMQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/RabbitMQ/index.html">
 <meta property="og:site_name" content="记路心晴">
-<meta property="og:description" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解安装RabbitMQ安装环境centos7 + RabbitMQ 3.7.7   + OTP 21.0 Source File  1.安装erlang: （1）.下载: http://www.erlang.org/downloads （2）.安装依赖yum install ncurses-devel        （">
+<meta property="og:description" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解安装RabbitMQ安装环境centos7 + RabbitMQ 3.7.7   + OTP 21.0 Source File">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091118450-1592424097.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091219153-26270174.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091257496-665638720.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091338246-1623413505.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091426887-423066137.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091457637-428564110.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091636856-880162406.png">
-<meta property="og:updated_time" content="2018-08-09T02:17:58.680Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091118450-1592424097.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091219153-26270174.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091257496-665638720.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091338246-1623413505.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091426887-423066137.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091457637-428564110.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091636856-880162406.png">
+<meta property="og:updated_time" content="2018-08-09T02:43:41.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解">
-<meta name="twitter:description" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解安装RabbitMQ安装环境centos7 + RabbitMQ 3.7.7   + OTP 21.0 Source File  1.安装erlang: （1）.下载: http://www.erlang.org/downloads （2）.安装依赖yum install ncurses-devel        （">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/08/RabbitMQ/RabbitMQ/458325-20160107091118450-1592424097.png">
+<meta name="twitter:description" content="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解安装RabbitMQ安装环境centos7 + RabbitMQ 3.7.7   + OTP 21.0 Source File">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/08/RabbitMQ/458325-20160107091118450-1592424097.png">
 
 
 
@@ -370,6 +370,7 @@
 
       
         <h1 id="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解"><a href="#SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解" class="headerlink" title="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解"></a>SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解</h1><h2 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h2><p>安装环境centos7 + <a href="http://www.rabbitmq.com/news.html#2018-07-05T17:00:00+00:00" target="_blank" rel="noopener">RabbitMQ 3.7.7 </a>  + <a href="http://erlang.org/download/otp_src_21.0.tar.gz" target="_blank" rel="noopener">OTP 21.0 Source File</a> </p>
+<a id="more"></a>
 <p><strong>1.安装erlang:</strong></p>
 <p>（1）.下载: <a href="http://www.erlang.org/downloads" target="_blank" rel="noopener">http://www.erlang.org/downloads</a></p>
 <p>（2）.安装依赖<code>yum install ncurses-devel</code><br>        （3）.解压<code>tar xf otp_src_21.0.tar.gz</code><br>    （4）.安装目录./configure –prefix=/usr/local/erlang –without-javac</p>
@@ -431,23 +432,23 @@
 <p>怎么让RabbitMQ在后台运行:</p>
 <p><code>./rabbitmq-server  -detached</code></p>
 <h2 id="RabbitMQ基本原理"><a href="#RabbitMQ基本原理" class="headerlink" title="RabbitMQ基本原理"></a>RabbitMQ基本原理</h2><p>讲解基础概念的前面，我们先来整体构造一个结构图，这样会方便们更好地去理解RabbitMQ的基本原理。</p>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091118450-1592424097.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091118450-1592424097.png" alt="img"></p>
 <p>   通过上面这张应用相结合的结构图既能够清晰的看清楚整体的send Message到Receive Message的一个大致的流程。当然上面有很多名词都相比还没有介绍到，不要着急接下来我们就开始对其进行详细的讲解。</p>
 <h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a><strong>Queue</strong></h4><p>Queue（队列）RabbitMQ的作用是存储消息，队列的特性是先进先出。上图可以清晰地看到Client A和Client B是生产者，生产者生产消息最终被送到RabbitMQ的内部对象Queue中去，而消费者则是从Queue队列中取出数据。可以简化成表示为：</p>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091219153-26270174.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091219153-26270174.png" alt="img"></p>
 <p>生产者Send Message “A”被传送到Queue中，消费者发现消息队列Queue中有订阅的消息，就会将这条消息A读取出来进行一些列的业务操作。这里只是一个消费正对应一个队列Queue，也可以多个消费者订阅同一个队列Queue，当然这里就会将Queue里面的消息平分给其他的消费者，但是会存在一个一个问题就是如果每个消息的处理时间不同，就会导致某些消费者一直在忙碌中，而有的消费者处理完了消息后一直处于空闲状态，因为前面已经提及到了Queue会平分这些消息给相应的消费者。这里我们就可以使用prefetchCount来限制每次发送给消费者消息的个数。详情见下图所示：</p>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091257496-665638720.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091257496-665638720.png" alt="img"></p>
 <p>这里的prefetchCount=1是指每次从Queue中发送一条消息来。等消费者处理完这条消息后Queue会再发送一条消息给消费者。</p>
 <h4 id="Exchange"><a href="#Exchange" class="headerlink" title="Exchange"></a><strong>Exchange</strong></h4><p>我们在开篇的时候就留了一个坑，就是那个应用结构图里面，消费者Client A和消费者Client B是如何知道我发送的消息是给Queue1还是给Queue2，有没有过这个问题，那么我们就来解开这个面纱，看看到底是个什么构造。首先明确一点就是生产者产生的消息并不是直接发送给消息队列Queue的，而是要经过Exchange（交换器），由Exchange再将消息路由到一个或多个Queue，当然这里还会对不符合路由规则的消息进行丢弃掉，这里指的是后续要谈到的Exchange Type。那么Exchange是怎样将消息准确的推送到对应的Queue的呢？那么这里的功劳最大的当属Binding，RabbitMQ是通过Binding将Exchange和Queue链接在一起，这样Exchange就知道如何将消息准确的推送到Queue中去。简单示意图如下所示：</p>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091338246-1623413505.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091338246-1623413505.png" alt="img"></p>
 <p>在绑定（Binding）Exchange和Queue的同时，一般会指定一个Binding Key，生产者将消息发送给Exchange的时候，一般会产生一个Routing Key，当Routing Key和Binding Key对应上的时候，消息就会发送到对应的Queue中去。那么Exchange有四种类型，不同的类型有着不同的策略。也就是表明不同的类型将决定绑定的Queue不同，换言之就是说生产者发送了一个消息，Routing Key的规则是A，那么生产者会将Routing Key=A的消息推送到Exchange中，这时候Exchange中会有自己的规则，对应的规则去筛选生产者发来的消息，如果能够对应上Exchange的内部规则就将消息推送到对应的Queue中去。那么接下来就来详细讲解下Exchange里面类型。</p>
 <h4 id="Exchange-Type"><a href="#Exchange-Type" class="headerlink" title="Exchange Type"></a><strong>Exchange Type</strong></h4><p><strong>fanout</strong></p>
 <p>fanout类型的Exchange路由规则非常简单，它会把所有发送到该Exchange的消息路由到所有与它绑定的Queue中。</p>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091426887-423066137.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091426887-423066137.png" alt="img"></p>
 <p>上图所示，生产者（P）生产消息1将消息1推送到Exchange，由于Exchange Type=fanout这时候会遵循fanout的规则将消息推送到所有与它绑定Queue，也就是图上的两个Queue最后两个消费者消费。</p>
 <p><strong>direct</strong></p>
 <p>direct类型的Exchange路由规则也很简单，它会把消息路由到那些binding key与routing key完全匹配的Queue中</p>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091457637-428564110.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091457637-428564110.png" alt="img"></p>
 <p>当生产者（P）发送消息时Rotuing key=booking时，这时候将消息传送给Exchange，Exchange获取到生产者发送过来消息后，会根据自身的规则进行与匹配相应的Queue，这时发现Queue1和Queue2都符合，就会将消息传送给这两个队列，如果我们以Rotuing key=create和Rotuing key=confirm发送消息时，这时消息只会被推送到Queue2队列中，其他Routing Key的消息将会被丢弃。</p>
 <p><strong>topic</strong></p>
 <p>前面提到的direct规则是严格意义上的匹配，换言之Routing Key必须与Binding Key相匹配的时候才将消息传送给Queue，那么topic这个规则就是模糊匹配，可以通过通配符满足一部分规则就可以传送。它的约定是：</p>
@@ -456,7 +457,7 @@
 <li>binding key与routing key一样也是句点号“. ”分隔的字符串</li>
 <li>binding key中可以存在两种特殊字符“<em>”与“#”，用于做模糊匹配，其中“</em>”用于匹配一个单词，“#”用于匹配多个单词（可以是零个）</li>
 </ol>
-<p><img src="/2018/08/08/RabbitMQ/./RabbitMQ\458325-20160107091636856-880162406.png" alt="img"></p>
+<p><img src="/2018/08/08/RabbitMQ/458325-20160107091636856-880162406.png" alt="img"></p>
 <p>当生产者发送消息Routing Key=F.C.E的时候，这时候只满足Queue1，所以会被路由到Queue中，如果Routing Key=A.C.E这时候会被同是路由到Queue1和Queue2中，如果Routing Key=A.F.B时，这里只会发送一条消息到Queue2中。</p>
 <p><strong>headers</strong></p>
 <p>headers类型的Exchange不依赖于routing key与binding key的匹配规则来路由消息，而是根据发送的消息内容中的headers属性进行匹配。<br>在绑定Queue与Exchange时指定一组键值对；当消息发送到Exchange时，RabbitMQ会取到该消息的headers（也是一个键值对的形式），对比其中的键值对是否完全匹配Queue与Exchange绑定时指定的键值对；如果完全匹配则消息会路由到该Queue，否则不会路由到该Queue。<br>该类型的Exchange没有用到过（不过也应该很有用武之地），所以不做介绍。</p>
@@ -583,8 +584,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/05/SpringWebContext/" rel="next" title="SpringBoot2踩坑之SpringWebContext方法过时">
-                <i class="fa fa-chevron-left"></i> SpringBoot2踩坑之SpringWebContext方法过时
+              <a href="/2018/08/05/SecKillPageOptimise/" rel="next" title="SpringBoot2之秒杀页面优化及解决超卖问题">
+                <i class="fa fa-chevron-left"></i> SpringBoot2之秒杀页面优化及解决超卖问题
               </a>
             
           </div>
@@ -593,7 +594,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/08/“APIIOptimise/" rel="prev" title="SpringBoot学习之秒杀接口优化">
+              <a href="/2018/08/08/APIIOptimise/" rel="prev" title="SpringBoot学习之秒杀接口优化">
                 SpringBoot学习之秒杀接口优化 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -671,7 +672,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -793,7 +794,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.2k字</span>
+  <span class="post-count">博客全站共22.6k字</span>
 </div>
         
 
