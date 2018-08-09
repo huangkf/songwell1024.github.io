@@ -98,7 +98,11 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/1533475002.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/1533475274543.png">
-<meta property="og:updated_time" content="2018-08-06T13:36:27.529Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492T335.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492R5A.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492WV1.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492Q463.png">
+<meta property="og:updated_time" content="2018-08-09T03:19:26.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot2之秒杀页面优化及解决超卖问题">
 <meta name="twitter:description" content="页面缓存+URL缓存+对象缓存页面缓存其实系统访问某个页面的时候，并不是直接使用系统渲染，而是先从缓存中获取找到数据之后就然后返回给客户端，要是没有找到就手动渲染这个模板，渲染完成之后再把数据返回给客户端，同时把数据缓存到redis中。 其实流程很简单：（1）取缓存  （2）手动渲染模板  （3）结果输出 关于手动渲染，官方的介绍是这么说的;">
@@ -399,9 +403,10 @@
 <p>可以看到这里把html中的原来的依赖于Thymeleaf的部分全部重写，直接从浏览器的缓存中取数据，填充页面。其实还需要做一个配置，就是把application.properties中添加上spring对于静态资源的配置，就是SPRING  RESOURCES HANDLING的配置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#static</span><br><span class="line">spring.resources.add-mappings=true</span><br><span class="line">spring.resources.chain.cache=true</span><br><span class="line">spring.resources.cache.period=3600</span><br><span class="line">spring.resources.chain.enabled=true</span><br><span class="line">spring.resources.chain.gzipped=true</span><br><span class="line">spring.resources.chain.html-application-cache=true</span><br><span class="line">spring.resources.static-locations=classpath:/static/</span><br></pre></td></tr></table></figure>
 <p>这样就完成了前后端的分离。</p>
-<h2 id="静态资源优化"><a href="#静态资源优化" class="headerlink" title="静态资源优化"></a>静态资源优化</h2><p><strong>代码压缩</strong><br>最常规的优化手段之一。<br>我们在平时开发的时候，JS脚本文件和CSS样式文件中的代码，都会依据一定的代码规范（比如javascript-standard-style）来提高项目的可维护性，以及团队之间合作的效率。<br>但是在项目发布现网后， 这些代码是给客户端（浏览器）识别的，此时代码的命名规范、空格缩进都已没有必要，我们可以使用工具将这些代码进行混淆和压缩，减少静态文件的大小</p>
+<h2 id="静态资源优化"><a href="#静态资源优化" class="headerlink" title="静态资源优化"></a>静态资源优化</h2><p><strong>代码压缩</strong> </p>
+<p>最常规的优化手段之一。<br>    我们在平时开发的时候，JS脚本文件和CSS样式文件中的代码，都会依据一定的代码规范（比如javascript-standard-style）来提高项目的可维护性，以及团队之间合作的效率。<br>    但是在项目发布现网后， 这些代码是给客户端（浏览器）识别的，此时代码的命名规范、空格缩进都已没有必要，我们可以使用工具将这些代码进行混淆和压缩，减少静态文件的大小</p>
 <p><strong>文件合并</strong></p>
-<p>在npm流行的今天，前端在进行项目开发的时候，往往会使用很多第三方代码库，比如jQuery，axios，weixin-js-sdk，lodash，bootstrap等等，每个库都有属于自己的脚本或者样式文件。<br>按照最老的方式的话，我们会用<script>标签或者<style>标签分别引入这些库文件，导致在打开一个页面的时候会发起几十个请求，这对于移动端来说是不可接受的。<br>在减少文件请求数量方面大致有以下三方面：<br>1、合并js脚本文件<br>2、合并css样式文件<br>3、合并css引用的图片，使用sprite雪碧图。</p>
+<p>在npm流行的今天，前端在进行项目开发的时候，往往会使用很多第三方代码库，比如jQuery，axios，weixin-js-sdk，lodash，bootstrap等等，每个库都有属于自己的脚本或者样式文件。<br>    按照最老的方式的话，我们会用<code>&lt;script&gt;</code>标签或者<code>&lt;style&gt;</code>标签分别引入这些库文件，导致在打开一个页面的时候会发起几十个请求，这对于移动端来说是不可接受的。<br>在减少文件请求数量方面大致有以下三方面：<br>1、合并js脚本文件<br>2、合并css样式文件<br>3、合并css引用的图片，使用sprite雪碧图。</p>
 <p><strong>GZip</strong></p>
 <p>开启GZip，精简JavaScript，移除重复脚本，图像优化</p>
 <p><strong>CDN优化</strong></p>
@@ -409,28 +414,28 @@
 <p>原理：CDN部署在距离用户最近的网络节点上，用户上网的时候通过网络运营商（电信，长城等）访问距离用户最近的要给城域网网络地址节点上，然后通过城域网跳到主干网上，主干网则根据访问IP找到访问资源所在服务器，但是，很大一部分内容在上一层节点已经找到，此时不用往下继续查找，直接返回所访问的资源即可，减小了服务器的负担。一般互联网公司都会建立自己的CDN机群或者租用CDN。</p>
 <p>这些就了解下原理，毕竟大部分是前端的。</p>
 <p>关于这个还找到了一篇博客啊，仅供参考。</p>
-<p><a href="https://blog.csdn.net/zhangjs712/article/details/51166748">https://blog.csdn.net/zhangjs712/article/details/51166748</a></p>
+<p><a href="https://blog.csdn.net/zhangjs712/article/details/51166748" target="_blank" rel="noopener">https://blog.csdn.net/zhangjs712/article/details/51166748</a></p>
 <h1 id="超卖问题"><a href="#超卖问题" class="headerlink" title="超卖问题"></a>超卖问题</h1><h4 id="超发的原因"><a href="#超发的原因" class="headerlink" title="超发的原因"></a>超发的原因</h4><p>假设某个抢购场景中，我们一共只有100个商品，在最后一刻，我们已经消耗了99个商品，仅剩最后一个。这个时候，系统发来多个并发请求，这批请求读取到的商品余量都是99个，然后都通过了这一个余量判断，最终导致超发。（同文章前面说的场景）</p>
-<p><img src="SecKillPageOptimise\22492T335.png" alt="img"></p>
+<p><img src="/2018/08/05/SecKillPageOptimise/22492T335.png" alt="img"></p>
 <p>在上面的这个图中，就导致了并发用户B也“抢购成功”，多让一个人获得了商品。这种场景，在高并发的情况下非常容易出现。</p>
 <p><strong>1.数据库唯一索引</strong></p>
 <p>就是分表，秒杀的订单和正常的订单是两张表，在数据库中建立用户id和商品id的唯一索引，防止用户插入重复的记录。</p>
 <p><strong>2. 悲观锁思路</strong></p>
 <p>解决线程安全的思路很多，可以从“悲观锁”的方向开始讨论。</p>
 <p>悲观锁，也就是在修改数据的时候，采用锁定状态，排斥外部请求的修改。遇到加锁的状态，就必须等待。</p>
-<p><img src="SecKillPageOptimise\22492R5A.png" alt="img"></p>
+<p><img src="/2018/08/05/SecKillPageOptimise/22492R5A.png" alt="img"></p>
 <p>虽然上述的方案的确解决了线程安全的问题，但是，别忘记，我们的场景是“高并发”。也就是说，会很多这样的修改请求，每个请求都需要等待“锁”，某些线程可能永远都没有机会抢到这个“锁”，这种请求就会死在那里。同时，这种请求会很多，瞬间增大系统的平均响应时间，结果是可用连接数被耗尽，系统陷入异常。</p>
 <p><strong>3. FIFO队列思路</strong></p>
 <p>那好，那么我们稍微修改一下上面的场景，我们直接将请求放入队列中的，采用FIFO（First Input First Output，先进先出），这样的话，我们就不会导致某些请求永远获取不到锁。看到这里，是不是有点强行将多线程变成单线程的感觉哈。</p>
-<p><img src="SecKillPageOptimise\22492WV1.png" alt="img"></p>
+<p><img src="/2018/08/05/SecKillPageOptimise/22492WV1.png" alt="img"></p>
 <p>然后，我们现在解决了锁的问题，全部请求采用“先进先出”的队列方式来处理。那么新的问题来了，高并发的场景下，因为请求很多，很可能一瞬间将队列内存“撑爆”，然后系统又陷入到了异常状态。或者设计一个极大的内存队列，也是一种方案，但是，系统处理完一个队列内请求的速度根本无法和疯狂涌入队列中的数目相比。也就是说，队列内的请求会越积累越多，最终Web系统平均响应时候还是会大幅下降，系统还是陷入异常。</p>
 <p><strong>4. 乐观锁思路</strong></p>
 <p> 这个时候，我们就可以讨论一下“乐观锁”的思路了。乐观锁，是相对于“悲观锁”采用更为宽松的加锁机制，大都是采用带版本号（Version）更新。实现就是，这个数据所有请求都有资格去修改，但会获得一个该数据的版本号，只有版本号符合的才能更新成功，其他的返回抢购失败。这样的话，我们就不需要考虑队列的问题，不过，它会增大CPU的计算开销。但是，综合来说，这是一个比较好的解决方案。</p>
-<p><img src="SecKillPageOptimise\22492Q463.png" alt="img"></p>
+<p><img src="/2018/08/05/SecKillPageOptimise/22492Q463.png" alt="img"></p>
 <p>有很多软件和服务都“乐观锁”功能的支持，例如Redis中的watch就是其中之一。通过这个实现，我们保证了数据的安全。</p>
 <p>就是采用计数器的方式，用一个集合，存放每个商品以及其对应的数量，如果只是单纯的decr函数或者是incr函数，不能解决秒杀这种问题。因为有可能在并发的情况下，两个请求取到的数都是0，然后都加1，结果为1，实际上应该是2。那么这个时候建议利用乐观锁，实现自己的decr函数。</p>
 <p>乐观锁的机制如同版本控制，如果修改的时候，要修改的value在redis中的值已经跟取出来时不一样，则修改失败。</p>
-</script></p>
+
       
     </div>
     
@@ -656,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#页面缓存-URL缓存-对象缓存"><span class="nav-number">1.</span> <span class="nav-text">页面缓存+URL缓存+对象缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面缓存"><span class="nav-number">1.1.</span> <span class="nav-text">页面缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL缓存"><span class="nav-number">2.</span> <span class="nav-text">URL缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象缓存"><span class="nav-number">3.</span> <span class="nav-text">对象缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面静态优化-前后端分离"><span class="nav-number">4.</span> <span class="nav-text">页面静态优化 前后端分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态资源优化"><span class="nav-number">5.</span> <span class="nav-text">静态资源优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#页面缓存-URL缓存-对象缓存"><span class="nav-number">1.</span> <span class="nav-text">页面缓存+URL缓存+对象缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面缓存"><span class="nav-number">1.1.</span> <span class="nav-text">页面缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL缓存"><span class="nav-number">2.</span> <span class="nav-text">URL缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象缓存"><span class="nav-number">3.</span> <span class="nav-text">对象缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面静态优化-前后端分离"><span class="nav-number">4.</span> <span class="nav-text">页面静态优化 前后端分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态资源优化"><span class="nav-number">5.</span> <span class="nav-text">静态资源优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超卖问题"><span class="nav-number"></span> <span class="nav-text">超卖问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#超发的原因"><span class="nav-number">0.0.1.</span> <span class="nav-text">超发的原因</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -686,7 +691,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.7k字</span>
+  <span class="post-count">博客全站共24.1k字</span>
 </div>
         
 
