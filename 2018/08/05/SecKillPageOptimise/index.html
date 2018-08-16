@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492R5A.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492WV1.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/SecKillPageOptimise/22492Q463.png">
-<meta property="og:updated_time" content="2018-08-09T03:19:26.161Z">
+<meta property="og:updated_time" content="2018-08-09T06:15:42.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot2之秒杀页面优化及解决超卖问题">
 <meta name="twitter:description" content="页面缓存+URL缓存+对象缓存页面缓存其实系统访问某个页面的时候，并不是直接使用系统渲染，而是先从缓存中获取找到数据之后就然后返回给客户端，要是没有找到就手动渲染这个模板，渲染完成之后再把数据返回给客户端，同时把数据缓存到redis中。 其实流程很简单：（1）取缓存  （2）手动渲染模板  （3）结果输出 关于手动渲染，官方的介绍是这么说的;">
@@ -406,7 +406,7 @@
 <h2 id="静态资源优化"><a href="#静态资源优化" class="headerlink" title="静态资源优化"></a>静态资源优化</h2><p><strong>代码压缩</strong> </p>
 <p>最常规的优化手段之一。<br>    我们在平时开发的时候，JS脚本文件和CSS样式文件中的代码，都会依据一定的代码规范（比如javascript-standard-style）来提高项目的可维护性，以及团队之间合作的效率。<br>    但是在项目发布现网后， 这些代码是给客户端（浏览器）识别的，此时代码的命名规范、空格缩进都已没有必要，我们可以使用工具将这些代码进行混淆和压缩，减少静态文件的大小</p>
 <p><strong>文件合并</strong></p>
-<p>在npm流行的今天，前端在进行项目开发的时候，往往会使用很多第三方代码库，比如jQuery，axios，weixin-js-sdk，lodash，bootstrap等等，每个库都有属于自己的脚本或者样式文件。<br>    按照最老的方式的话，我们会用<code>&lt;script&gt;</code>标签或者<code>&lt;style&gt;</code>标签分别引入这些库文件，导致在打开一个页面的时候会发起几十个请求，这对于移动端来说是不可接受的。<br>在减少文件请求数量方面大致有以下三方面：<br>1、合并js脚本文件<br>2、合并css样式文件<br>3、合并css引用的图片，使用sprite雪碧图。</p>
+<p>在npm流行的今天，前端在进行项目开发的时候，往往会使用很多第三方代码库，比如jQuery，axios，weixin-js-sdk，lodash，bootstrap等等，每个库都有属于自己的脚本或者样式文件。<br>    按照最老的方式的话，我们会用一些标签分别引入这些库文件，导致在打开一个页面的时候会发起几十个请求，这对于移动端来说是不可接受的。<br>在减少文件请求数量方面大致有以下三方面：<br>1、合并js脚本文件<br>2、合并css样式文件<br>3、合并css引用的图片，使用sprite雪碧图。</p>
 <p><strong>GZip</strong></p>
 <p>开启GZip，精简JavaScript，移除重复脚本，图像优化</p>
 <p><strong>CDN优化</strong></p>
@@ -481,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/04/JMeter/" rel="next" title="SpringBoot学习之Windows和Linux下的JMeter压测和redis压测">
-                <i class="fa fa-chevron-left"></i> SpringBoot学习之Windows和Linux下的JMeter压测和redis压测
+              <a href="/2018/08/05/SpringWebContext/" rel="next" title="SpringBoot2踩坑之SpringWebContext方法过时">
+                <i class="fa fa-chevron-left"></i> SpringBoot2踩坑之SpringWebContext方法过时
               </a>
             
           </div>
@@ -491,8 +491,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/05/SpringWebContext/" rel="prev" title="SpringBoot2踩坑之SpringWebContext方法过时">
-                SpringBoot2踩坑之SpringWebContext方法过时 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/08/RabbitMQ/" rel="prev" title="SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解">
+                SpringBoot之安装RabbitMQ（踩坑）及RabbitMQ原理和使用详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -580,7 +580,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -591,7 +591,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -691,7 +691,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.1k字</span>
+  <span class="post-count">博客全站共26.6k字</span>
 </div>
         
 
