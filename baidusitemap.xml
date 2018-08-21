@@ -4,18 +4,16 @@
 
     
   <url>
-    <loc>https://songwell1024.github.io/2018/08/19/AjaxAndJquery/</loc>
-    <lastmod>2018-08-20T12:28:09.071Z</lastmod>
+    <loc>https://songwell1024.github.io/2018/08/20/freemarker/</loc>
+    <lastmod>2018-08-21T11:10:36.981Z</lastmod>
     <data>
         <display>
-        <title>分别使用原生Ajax 和Jquery的方式发送请求</title>
-        <pubTime>2018-08-19T12:23:50.000Z</pubTime>
+        <title>freemarker基础知识总结</title>
+        <pubTime>2018-08-20T11:41:23.000Z</pubTime>
         
         <tag>web</tag>
          
-        <tag>Ajax</tag>
-         
-        <tag>Jquery</tag>
+        <tag>freemarker</tag>
          
          
            
@@ -28,16 +26,124 @@
 
     
   <url>
-    <loc>https://songwell1024.github.io/2018/08/20/freemarker/</loc>
-    <lastmod>2018-08-20T12:25:51.327Z</lastmod>
+    <loc>https://songwell1024.github.io/2018/05/20/first-blog/</loc>
+    <lastmod>2018-08-21T11:09:42.176Z</lastmod>
     <data>
         <display>
-        <title>freemarker</title>
-        <pubTime>2018-08-20T11:41:23.000Z</pubTime>
+        <title>哈哈哈，终于把博客搭建起来啦</title>
+        <pubTime>2018-05-20T13:00:00.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="随笔" url="https://songwell1024.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/05/21/LinsterAndFilter/</loc>
+    <lastmod>2018-08-21T11:09:25.465Z</lastmod>
+    <data>
+        <display>
+        <title>LinsterAndFilter</title>
+        <pubTime>2018-05-21T01:42:31.000Z</pubTime>
+        
+        <tag>SpringBoot</tag>
+         
+        <tag>Listener</tag>
+         
+        <tag>Filter</tag>
+         
+        <tag>servlet</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringBoot" url="https://songwell1024.github.io/categories/SpringBoot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/05/29/LogisticRegression/</loc>
+    <lastmod>2018-08-21T11:06:54.978Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习之逻辑回归（Logistic Regression）与决策边界</title>
+        <pubTime>2018-05-29T01:57:57.000Z</pubTime>
+        
+        <tag>机器学习，逻辑回归</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/05/25/LinearRegression/</loc>
+    <lastmod>2018-08-21T11:06:43.609Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习之线性回归（Linear Regression）</title>
+        <pubTime>2018-05-25T01:42:31.000Z</pubTime>
+        
+        <tag>机器学习，线性回归</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/05/23/GradientDescent/</loc>
+    <lastmod>2018-08-21T11:06:29.624Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习之梯度下降法(GradientDescent)</title>
+        <pubTime>2018-05-23T13:32:24.000Z</pubTime>
+        
+        <tag>机器学习，梯度下降，python3，jupyter notebook</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/08/19/AjaxAndJquery/</loc>
+    <lastmod>2018-08-20T12:28:09.071Z</lastmod>
+    <data>
+        <display>
+        <title>分别使用原生Ajax 和Jquery的方式发送请求</title>
+        <pubTime>2018-08-19T12:23:50.000Z</pubTime>
         
         <tag>web</tag>
          
-        <tag>freemarker</tag>
+        <tag>Ajax</tag>
+         
+        <tag>Jquery</tag>
          
          
            
@@ -182,26 +288,6 @@
 
     
   <url>
-    <loc>https://songwell1024.github.io/2018/07/29/GradientDescent/</loc>
-    <lastmod>2018-08-16T12:14:29.747Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习之梯度下降法(GradientDescent)</title>
-        <pubTime>2018-07-29T13:32:24.000Z</pubTime>
-        
-        <tag>机器学习，梯度下降，python3，jupyter notebook</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://songwell1024.github.io/2018/08/04/JMeter/</loc>
     <lastmod>2018-08-16T12:14:23.098Z</lastmod>
     <data>
@@ -241,46 +327,6 @@
            
              
               <breadCrumb title="SpringBoot" url="https://songwell1024.github.io/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://songwell1024.github.io/2018/07/30/LinearRegression/</loc>
-    <lastmod>2018-08-16T12:14:10.116Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习之线性回归（Linear Regression）</title>
-        <pubTime>2018-07-30T01:42:31.000Z</pubTime>
-        
-        <tag>机器学习，线性回归</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://songwell1024.github.io/2018/07/30/LogisticRegression/</loc>
-    <lastmod>2018-08-16T12:13:56.234Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习之逻辑回归（Logistic Regression）与决策边界</title>
-        <pubTime>2018-07-30T01:57:57.000Z</pubTime>
-        
-        <tag>机器学习，逻辑回归</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -391,26 +437,6 @@
            
              
               <breadCrumb title="SpringBoot" url="https://songwell1024.github.io/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://songwell1024.github.io/2018/06/21/first-blog/</loc>
-    <lastmod>2018-08-02T14:08:49.777Z</lastmod>
-    <data>
-        <display>
-        <title>哈哈哈，终于把博客搭建起来啦</title>
-        <pubTime>2018-06-21T13:00:00.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://songwell1024.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
