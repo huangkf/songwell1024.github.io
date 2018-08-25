@@ -88,13 +88,13 @@
 
 
 
-<meta name="description" content="二分搜索树定义二分搜索树（Binary Search Tree），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：  若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值； 任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 任意节点的左、右子树也分别为二叉查找树。 没有键值相等的节点（no duplicate nodes）。 如下图就是">
+<meta name="description" content="二分搜索树定义二分搜索树（Binary Search Tree），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：">
 <meta name="keywords" content="数据结构， 二分搜索树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构学习总结之二分搜索树">
 <meta property="og:url" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/index.html">
 <meta property="og:site_name" content="记路心晴">
-<meta property="og:description" content="二分搜索树定义二分搜索树（Binary Search Tree），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：  若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值； 任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 任意节点的左、右子树也分别为二叉查找树。 没有键值相等的节点（no duplicate nodes）。 如下图就是">
+<meta property="og:description" content="二分搜索树定义二分搜索树（Binary Search Tree），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/1.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/2.png">
@@ -107,13 +107,13 @@
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/7.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/8.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/9.gif">
-<meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/C:/Users/Administrator/Desktop/数据结构/BinarySearchTree/10.png">
-<meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/C:/Users/Administrator/Desktop/数据结构/BinarySearchTree/11.png">
-<meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/C:/Users/Administrator/Desktop/数据结构/BinarySearchTree/12.png">
-<meta property="og:updated_time" content="2018-08-24T08:26:48.123Z">
+<meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/10.png">
+<meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/11.png">
+<meta property="og:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/12.png">
+<meta property="og:updated_time" content="2018-08-24T08:34:15.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构学习总结之二分搜索树">
-<meta name="twitter:description" content="二分搜索树定义二分搜索树（Binary Search Tree），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：  若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值； 任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 任意节点的左、右子树也分别为二叉查找树。 没有键值相等的节点（no duplicate nodes）。 如下图就是">
+<meta name="twitter:description" content="二分搜索树定义二分搜索树（Binary Search Tree），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：">
 <meta name="twitter:image" content="https://songwell1024.github.io/2018/06/06/BinarySearchTree/1.png">
 
 
@@ -462,6 +462,7 @@
 
       
         <h1 id="二分搜索树"><a href="#二分搜索树" class="headerlink" title="二分搜索树"></a>二分搜索树</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>二分搜索树</strong>（<em>Binary Search Tree</em>），也称二叉查找树，有序二叉树,排序二叉树，是指一棵空树或者具有下列性质的二叉树：</p>
+<a id="more"></a>
 <ol>
 <li>若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
 <li>任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
@@ -541,11 +542,11 @@
 <p>  这样就完成了树的简单的实现</p>
 <h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>  当然树还有很多的东西可以去设计，比方说把每个树的节点代表的含义设置的更加丰富</p>
 <p>  如：树节点除了存值，还存储以其为根节点的树的元素的个数，也就是树的size</p>
-<p><img src="/2018/06/06/BinarySearchTree/C:/Users\Administrator\Desktop\数据结构\BinarySearchTree\10.png" alt="10"></p>
+<p><img src="/2018/06/06/BinarySearchTree/10.png" alt="10"></p>
 <p>  或者是存储该节点在树中的深度</p>
-<p><img src="/2018/06/06/BinarySearchTree/C:/Users\Administrator\Desktop\数据结构\BinarySearchTree\11.png" alt="11"></p>
+<p><img src="/2018/06/06/BinarySearchTree/11.png" alt="11"></p>
 <p>  或者是把树设计成可以存储重复的元素，就是在该节点在存一个代表其元素个数的值。</p>
-<p><img src="/2018/06/06/BinarySearchTree/C:/Users\Administrator\Desktop\数据结构\BinarySearchTree\12.png" alt="12"></p>
+<p><img src="/2018/06/06/BinarySearchTree/12.png" alt="12"></p>
 <p>  总之树的拓展还有很多，待慢慢探索实现。</p>
 
       
@@ -631,8 +632,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/02/Redis/" rel="prev" title="SpringBoot2.0集成Redis详解及踩过的坑（Could not get a resource from the pool）">
-                SpringBoot2.0集成Redis详解及踩过的坑（Could not get a resource from the pool） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/08/Map/" rel="prev" title="Map">
+                Map <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -763,7 +764,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -890,7 +891,7 @@ var ap = new APlayer({
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共51.3k字</span>
+  <span class="post-count">博客全站共51.5k字</span>
 </div>
         
 
