@@ -4,11 +4,33 @@
 
     
   <url>
-    <loc>https://songwell1024.github.io/2018/06/12/MaxHeapAndPriorityQueue/</loc>
-    <lastmod>2018-08-27T12:57:59.713Z</lastmod>
+    <loc>https://songwell1024.github.io/2018/06/12/SegmentTree/</loc>
+    <lastmod>2018-08-28T13:57:19.611Z</lastmod>
     <data>
         <display>
-        <title>MaxHeapAndPriorityQueue</title>
+        <title>segment tree(线段树)详解</title>
+        <pubTime>2018-06-12T08:37:39.000Z</pubTime>
+        
+        <tag>SegmentTree</tag>
+         
+        <tag>数据结构</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="https://songwell1024.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/06/12/MaxHeapAndPriorityQueue/</loc>
+    <lastmod>2018-08-27T13:09:20.752Z</lastmod>
+    <data>
+        <display>
+        <title>堆树详解及使用最大堆实现优先队列</title>
         <pubTime>2018-06-12T03:18:43.000Z</pubTime>
         
         <tag>最大堆， 优先队列， 数据结构</tag>
@@ -31,9 +53,9 @@
         <title>Map及其底层简单实现</title>
         <pubTime>2018-06-08T07:03:37.000Z</pubTime>
         
-        <tag>map</tag>
-         
         <tag>数据结构</tag>
+         
+        <tag>map</tag>
          
          
            
