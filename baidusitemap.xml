@@ -4,6 +4,63 @@
 
     
   <url>
+    <loc>https://songwell1024.github.io/2018/06/16/AVLTree/</loc>
+    <lastmod>2018-08-31T12:37:05.465Z</lastmod>
+    <data>
+        <display>
+        <title>AVLTree</title>
+        <pubTime>2018-06-16T02:16:48.000Z</pubTime>
+        
+        <tag>AVL Tree</tag>
+         
+        <tag>数据结构</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="https://songwell1024.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/06/21/RedBlackTree/</loc>
+    <lastmod>2018-08-31T12:36:31.215Z</lastmod>
+    <data>
+        <display>
+        <title>红黑树思想详解及实现</title>
+        <pubTime>2018-06-21T02:15:27.000Z</pubTime>
+        
+        <tag>红黑树， 数据结构</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="https://songwell1024.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/08/29/UnionFind/</loc>
+    <lastmod>2018-08-29T07:00:49.587Z</lastmod>
+    <data>
+        <display>
+        <title>UnionFind</title>
+        <pubTime>2018-08-29T07:00:49.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://songwell1024.github.io/2018/06/12/SegmentTree/</loc>
     <lastmod>2018-08-28T13:57:19.611Z</lastmod>
     <data>
@@ -11,9 +68,9 @@
         <title>segment tree(线段树)详解</title>
         <pubTime>2018-06-12T08:37:39.000Z</pubTime>
         
-        <tag>SegmentTree</tag>
-         
         <tag>数据结构</tag>
+         
+        <tag>SegmentTree</tag>
          
          
            
