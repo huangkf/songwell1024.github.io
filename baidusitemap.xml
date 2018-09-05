@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://songwell1024.github.io/2018/06/16/UnionFind/</loc>
+    <lastmod>2018-09-02T12:00:39.398Z</lastmod>
+    <data>
+        <display>
+        <title>并查集详解及底层实现</title>
+        <pubTime>2018-06-16T07:00:49.000Z</pubTime>
+        
+        <tag>并查集， 数据结构</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="https://songwell1024.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://songwell1024.github.io/2018/07/01/HashTable/</loc>
-    <lastmod>2018-09-02T02:40:56.625Z</lastmod>
+    <lastmod>2018-09-02T02:56:41.522Z</lastmod>
     <data>
         <display>
         <title>哈希表设计思想及实现</title>
@@ -26,6 +46,46 @@
 
     
   <url>
+    <loc>https://songwell1024.github.io/2018/05/29/LogisticRegression/</loc>
+    <lastmod>2018-09-02T02:56:30.604Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习之逻辑回归（Logistic Regression）与决策边界</title>
+        <pubTime>2018-05-29T01:57:57.000Z</pubTime>
+        
+        <tag>机器学习，逻辑回归</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://songwell1024.github.io/2018/05/25/LinearRegression/</loc>
+    <lastmod>2018-09-02T02:44:25.912Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习之线性回归（Linear Regression）</title>
+        <pubTime>2018-05-25T01:42:31.000Z</pubTime>
+        
+        <tag>机器学习，线性回归</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://songwell1024.github.io/2018/06/27/RedBlackTree/</loc>
     <lastmod>2018-08-31T12:46:58.174Z</lastmod>
     <data>
@@ -34,26 +94,6 @@
         <pubTime>2018-06-27T02:15:27.000Z</pubTime>
         
         <tag>红黑树， 数据结构</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="https://songwell1024.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://songwell1024.github.io/2018/06/16/UnionFind/</loc>
-    <lastmod>2018-08-31T12:46:07.316Z</lastmod>
-    <data>
-        <display>
-        <title>并查集详解及底层实现</title>
-        <pubTime>2018-06-16T07:00:49.000Z</pubTime>
-        
-        <tag>并查集， 数据结构</tag>
          
          
            
@@ -257,46 +297,6 @@
            
              
               <breadCrumb title="SpringBoot" url="https://songwell1024.github.io/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://songwell1024.github.io/2018/05/29/LogisticRegression/</loc>
-    <lastmod>2018-08-21T11:06:54.978Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习之逻辑回归（Logistic Regression）与决策边界</title>
-        <pubTime>2018-05-29T01:57:57.000Z</pubTime>
-        
-        <tag>机器学习，逻辑回归</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://songwell1024.github.io/2018/05/25/LinearRegression/</loc>
-    <lastmod>2018-08-21T11:06:43.609Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习之线性回归（Linear Regression）</title>
-        <pubTime>2018-05-25T01:42:31.000Z</pubTime>
-        
-        <tag>机器学习，线性回归</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://songwell1024.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>

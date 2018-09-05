@@ -102,13 +102,13 @@
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/4.gif">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/5.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/6.png">
-<meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/C:/Users/Administrator/Desktop/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/UnionFind/7.png">
+<meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/7.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/8.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/9.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/10.gif">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/11.png">
 <meta property="og:image" content="https://songwell1024.github.io/2018/06/16/UnionFind/12.png">
-<meta property="og:updated_time" content="2018-08-31T12:46:07.316Z">
+<meta property="og:updated_time" content="2018-09-02T12:00:39.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并查集详解及底层实现">
 <meta name="twitter:description" content="并查集详解及底层实现定义并查集，在一些有N个元素的集合应用问题中，我们通常是在开始时让每个元素构成一个单元素的集合，然后按一定顺序将属于同一组的元素所在的集合合并，其间要反复查找一个元素在哪个集合中。">
@@ -482,7 +482,7 @@
 <p>而不是这样去合并：</p>
 <p><img src="/2018/06/16/UnionFind/6.png" alt="6"></p>
 <h3 id="基于rank的union优化"><a href="#基于rank的union优化" class="headerlink" title="基于rank的union优化"></a>基于rank的union优化</h3><p>上面这样的方式其实避免了合并的时候合并成了链表，但是还有一个问题，就是如下图的合并：</p>
-<p><img src="/2018/06/16/UnionFind/C:/Users/Administrator/Desktop/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/UnionFind/7.png" alt="7"></p>
+<p><img src="/2018/06/16/UnionFind/7.png" alt="7"></p>
 <p>明显还是有问题的，我们希望的合并其实是将左边的树合并到右边的树上，而不是像上面这样，这样其实也是增加了树的深度，我们的union操作的时间复杂度是和树的深度有关系的。我们希望的合并方式是如下图的：</p>
 <p><img src="/2018/06/16/UnionFind/8.png" alt="8"></p>
 <p>这就是基于rank的合并方式。</p>
@@ -516,7 +516,7 @@
   <p><span>本文标题:</span><a href="/2018/06/16/UnionFind/">并查集详解及底层实现</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 WilsonSong 的个人博客">WilsonSong</a></p>
   <p><span>发布时间:</span>2018年06月16日 - 15:06</p>
-  <p><span>最后更新:</span>2018年08月31日 - 20:08</p>
+  <p><span>最后更新:</span>2018年09月02日 - 20:09</p>
   <p><span>原始链接:</span><a href="/2018/06/16/UnionFind/" title="并查集详解及底层实现">https://songwell1024.github.io/2018/06/16/UnionFind/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songwell1024.github.io/2018/06/16/UnionFind/"  aria-label="复制成功！"></i></span>
   </p>

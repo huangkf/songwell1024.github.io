@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear3.png">
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear4.png">
 <meta property="og:image" content="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear5.png">
-<meta property="og:updated_time" content="2018-08-21T11:06:43.609Z">
+<meta property="og:updated_time" content="2018-09-02T02:44:25.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习之线性回归（Linear Regression）">
 <meta name="twitter:description" content="线性回归概念线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。 回归分析中，只包括一个自变量和一个因变量，且二者的关系可用一条直线近似表示，这种回归分析称为一元线性回归分析。如果回归分析中包括两个或两个以上的自变量，且因变量和自变量之间是线性关系，则称为多">
@@ -602,6 +602,7 @@ def __repr__(self):
 return &quot;LinearRegression()&quot;
 
 
+
 这里其实就是一个简单的一元数据的一个简答线性回归算法。
 </code></pre><h2 id="线性回归评价指标"><a href="#线性回归评价指标" class="headerlink" title="线性回归评价指标"></a>线性回归评价指标</h2><p>那怎么去评价线性回归算法的指标的好坏呢？<br>    常用得三个指标：均方误差MSE、均方根误差RMSE、平均绝对误差MAE，这三类算法具体公式这些就不再赘述了，这三类指标都存在一个局限性：作用域的使用范围，对不同事物的预测缺乏统一标准，这样就引出了新的一个预测指标R Squared，其实就是R^2,关于R^2的解释如下：<br><img src="https://pythonimage-1257203698.cos.ap-shanghai.myqcloud.com/LinearRegression%2FLinear4.png" alt="R^2"></p>
 <p>从上面的图中我们到关于R^2的公式，公式中上面分子就是我们训练出的模型预测的所有误差。 下面分母就是    不管什么我们猜的结果就是y的平均数。（其实也就是我们瞎猜的误差）<br>    那具体实现下这些评价指标，首先换一个数据集，上面是我们自己构造的的太简单了，<br>    导入sklearn中的datasets</p>
@@ -633,7 +634,7 @@ print(&quot;R Square = &quot; + str(rs))
   <p><span>本文标题:</span><a href="/2018/05/25/LinearRegression/">机器学习之线性回归（Linear Regression）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 WilsonSong 的个人博客">WilsonSong</a></p>
   <p><span>发布时间:</span>2018年05月25日 - 09:05</p>
-  <p><span>最后更新:</span>2018年08月21日 - 19:08</p>
+  <p><span>最后更新:</span>2018年09月02日 - 10:09</p>
   <p><span>原始链接:</span><a href="/2018/05/25/LinearRegression/" title="机器学习之线性回归（Linear Regression）">https://songwell1024.github.io/2018/05/25/LinearRegression/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songwell1024.github.io/2018/05/25/LinearRegression/"  aria-label="复制成功！"></i></span>
   </p>
